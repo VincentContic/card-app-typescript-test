@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./database.db"
+  url      = env("DATABASE_URL")
 }
 
 model Entry {
@@ -15,4 +15,5 @@ model Entry {
   title       String
   description String
   created_at  DateTime
+  scheduled_date DateTime
 }

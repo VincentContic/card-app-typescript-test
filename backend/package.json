@@ -6,8 +6,10 @@
   "scripts": {
     "start": "ts-node ./src/app.ts",
     "dev": "nodemon -e ts,prisma,sql ./src/app.ts",
-    "test": "jest --testPathPattern=test/",
-    "prisma-setup": "prisma migrate dev && prisma generate"
+    "test": "cross-env NODE_ENV=test DATABASE_URL=file:./test_database.db jest --testPathPattern=test/",
+    "prisma-setup": "prisma migrate dev && prisma generate",
+    "prisma-setup:test": "cross-env DATABASE_URL=file:./test_database.db prisma migrate dev --name init && prisma generate",
+    "pretest": "npm run prisma-setup:test"
   },
   "keywords": [],
   "author": "",

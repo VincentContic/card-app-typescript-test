@@ -1,3 +1,10 @@
 node_modules
 /backend/prisma/database.db
 /backend/prisma/database.db-journal
+
+
+/backend/prisma/test_database.db
+/backend/prisma/test_database.db-journal
+
+/backend/src/.env.test
+/backend/.env
